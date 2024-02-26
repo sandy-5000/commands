@@ -81,6 +81,9 @@ fn search_directory(dir: &str, root_dir: &str, pattern: &str, flags: &[bool]) {
             if file_path != "" {
                 println!("------ File: {}", file_path);
             }
+            if flags[70] || flags[102] {
+                return;
+            }
             for (line_no, line) in matched_lines {
                 println!(
                     "{:>width$}) {}",
